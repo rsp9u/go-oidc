@@ -105,7 +105,7 @@ type Config struct {
 // The returned IDTokenVerifier is tied to the Provider's context and its behavior is
 // undefined once the Provider's context is canceled.
 func (p *Provider) Verifier(config *Config) *IDTokenVerifier {
-	return NewVerifier(p.issuer, p.remoteKeySet, config)
+	return NewVerifier(p.issuer, p.RemoteKeySet, config)
 }
 
 func parseJWT(p string) ([]byte, error) {

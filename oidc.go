@@ -73,7 +73,7 @@ type Provider struct {
 	// Raw claims returned by the server.
 	rawClaims []byte
 
-	remoteKeySet KeySet
+	RemoteKeySet KeySet
 }
 
 type cachedKeys struct {
@@ -129,7 +129,7 @@ func NewProvider(ctx context.Context, issuer string) (*Provider, error) {
 		tokenURL:     p.TokenURL,
 		userInfoURL:  p.UserInfoURL,
 		rawClaims:    body,
-		remoteKeySet: NewRemoteKeySet(ctx, p.JWKSURL),
+		RemoteKeySet: NewRemoteKeySet(ctx, p.JWKSURL),
 	}, nil
 }
 
